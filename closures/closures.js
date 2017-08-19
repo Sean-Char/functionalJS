@@ -97,3 +97,24 @@ var storyOfMyLife = storyWriter();
 storyOfMyLife.addWords('My code broke.'); // 'My code broke.'
 storyOfMyLife.addWords('I ate some ice cream.'); //'My code broke. I ate some ice cream.'
 storyOfMyLife.erase(); // ''
+
+
+// 1. Using the module pattern, design a toaster. Use your creativity here and think about what you want your users to be able to access on the outside of your toaster vs what you don't want them to be able to touch.
+
+var Toaster = function(){
+  var maxTemp = 475;
+  var temp = 0;
+  return {
+    setTemp: function(newTemp){
+      if (newTemp > maxTemp){
+        console.log('Temp is too High!');
+      } else {
+        temp = newTemp;
+      }
+    }
+  }
+}
+
+var myToaster = Toaster(); // call Toaster set obj into variable
+
+myToaster.setTemp(300); // set the temperature to 300
